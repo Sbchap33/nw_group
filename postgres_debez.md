@@ -54,6 +54,7 @@ PG_USER=debezium
 EOF
 ```
 ### Run Container ### 
+** note - change location of crunchy-container git folder **
 ```
-docker run -it --rm --name=pgsql --env-file=pg-env.list --volume='pwd'/pgconf:/pgconf -d crunchydata/crunchy-postgres:centos7-11.4-2.4.1
+docker run -it --rm --name=pgsql --env-file=pg-env.list --volume=/Users/samuelchapman/Desktop/Northwestern/Capstone/final/github/crunchy-containers/pgconf:/pgconf -d crunchydata/crunchy-postgres:centos7-11.4-2.4.1
 ```
