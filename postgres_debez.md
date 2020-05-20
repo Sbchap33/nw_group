@@ -14,7 +14,7 @@ docker run -it --rm --name kafka -p 9092:9092 --link zookeeper:zookeeper debeziu
 ```
 
 ### Create mock Postgres DB ### 
-
+Change terminal directory to crunchy-containers
 ```
 #we will need to customize the postgresql.conf file to ensure wal_level=logical
 cat << EOF > pgconf/postgresql.conf
