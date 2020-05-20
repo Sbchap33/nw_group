@@ -14,27 +14,6 @@ docker run -it --rm --name kafka -p 9092:9092 --link zookeeper:zookeeper debeziu
 ```
 
 ### Create mock Postgres DB ### 
-Change terminal directory to crunchy-containers
-```
-#we will need to customize the postgresql.conf file to ensure wal_level=logical
-cat << EOF > pgconf/postgresql.conf
-# here are some sane defaults given we will be unable to use the container
-# variables
-# general connection
-listen_addresses = '*'
-port = 5432
-max_connections = 20
-# memory
-shared_buffers = 128MB
-temp_buffers = 8MB
-work_mem = 4MB
-# WAL / replication
-wal_level = logical
-max_wal_senders = 3
-# these shared libraries are available in the Crunchy PostgreSQL container
-shared_preload_libraries = 'pgaudit.so,pg_stat_statements.so'
-EOF
-```
 
 ### Connect to Cruncy Containers Git and edit a few config files ### 
 https://github.com/CrunchyData/crunchy-containers
